@@ -1,5 +1,4 @@
-import { take, call, put, select, fork, cancel } from 'redux-saga/effects'
-import { delay } from 'redux-saga'
+import { take, call, put, select, fork, cancel, delay } from 'redux-saga/effects'
 import {
   LOGIN,
   LOGIN_LOADING,
@@ -266,7 +265,7 @@ const makeAuth = ({
     yield lsRemoveTokens()
   }
 
-  // Wait expiration and try to rehresh token!
+  // Wait expiration and try to refresh token!
   function *refreshOnExpirationLoop() {
     while (true) {
       const expires = yield getTokenExpires()
